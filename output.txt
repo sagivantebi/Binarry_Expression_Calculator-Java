@@ -1,0 +1,127 @@
+0:
+
+(x & y)
+
+((x A y) A (x A y))
+
+~((x A y))
+
+((x V x) V (y V y))
+
+(~(x) V ~(y))
+
+((z # F) & y)
+
+true
+
+1:
+
+(x | y)
+
+((x A x) A (y A y))
+
+(~(x) A ~(y))
+
+((x V y) V (x V y))
+
+~((x V y))
+
+((z # F) | y)
+
+true
+
+2:
+
+(x ^ y)
+
+((x A (x A y)) A (y A (x A y)))
+
+((x A (x A y)) A (y A (x A y)))
+
+(((x V x) V (y V y)) V (x V y))
+
+((~(x) V ~(y)) V (x V y))
+
+((z # F) ^ y)
+
+false
+
+3:
+
+(x A y)
+
+(x A y)
+
+(x A y)
+
+(((x V x) V (y V y)) V ((x V x) V (y V y)))
+
+~((~(x) V ~(y)))
+
+((z # F) A y)
+
+false
+
+4:
+
+(x V y)
+
+(((x A x) A (y A y)) A ((x A x) A (y A y)))
+
+~((~(x) A ~(y)))
+
+(x V y)
+
+(x V y)
+
+((z # F) V y)
+
+false
+
+5:
+
+(x # y)
+
+(((x A x) A (y A y)) A (x A y))
+
+((~(x) A ~(y)) A (x A y))
+
+((x V (x V y)) V (y V (x V y)))
+
+((x V (x V y)) V (y V (x V y)))
+
+((z # F) # y)
+
+true
+
+6:
+
+~(x)
+
+(x A x)
+
+~(x)
+
+(x V x)
+
+~(x)
+
+~((z # F))
+
+false
+
+7:
+
+~(((T & (x | y)) ^ x))
+
+(((((T A ((x A x) A (y A y))) A (T A ((x A x) A (y A y)))) A (((T A ((x A x) A (y A y))) A (T A ((x A x) A (y A y)))) A x)) A (x A (((T A ((x A x) A (y A y))) A (T A ((x A x) A (y A y)))) A x))) A ((((T A ((x A x) A (y A y))) A (T A ((x A x) A (y A y)))) A (((T A ((x A x) A (y A y))) A (T A ((x A x) A (y A y)))) A x)) A (x A (((T A ((x A x) A (y A y))) A (T A ((x A x) A (y A y)))) A x))))
+
+~(((~(~((~(x) A ~(y)))) A (~(~((~(x) A ~(y)))) A x)) A (x A (~(~((~(x) A ~(y)))) A x))))
+
+((((((T V T) V (((x V y) V (x V y)) V ((x V y) V (x V y)))) V ((T V T) V (((x V y) V (x V y)) V ((x V y) V (x V y))))) V (x V x)) V (((T V T) V (((x V y) V (x V y)) V ((x V y) V (x V y)))) V x)) V (((((T V T) V (((x V y) V (x V y)) V ((x V y) V (x V y)))) V ((T V T) V (((x V y) V (x V y)) V ((x V y) V (x V y))))) V (x V x)) V (((T V T) V (((x V y) V (x V y)) V ((x V y) V (x V y)))) V x)))
+
+~(((~(~(~(~((x V y))))) V ~(x)) V (~(~(~((x V y)))) V x)))
+
+~(((T & ((z # F) | y)) ^ (z # F)))
+
+true
